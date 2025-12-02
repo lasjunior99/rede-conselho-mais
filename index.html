@@ -114,9 +114,6 @@
     b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
     s.parentNode.insertBefore(b, s);})(window.lintrk);
     </script>
-    <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_LINKEDIN_PARTNER_ID&fmt=gif" />
-    </noscript>
 
     <script type="importmap">
     {
@@ -131,6 +128,11 @@
     </script>
 </head>
   <body class="bg-slate-50 text-slate-800 antialiased">
+    <!-- LinkedIn Insight Tag Noscript (Moved to body to fix parsing error) -->
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_LINKEDIN_PARTNER_ID&fmt=gif" />
+    </noscript>
+    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
