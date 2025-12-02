@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>REDE CONSELHO+ | Somamos Valor com Governança</title>
-    <meta name="description" content="Governança Corporativa, Conselho Consultivo, Conselheiros Independentes, Gestão estratégica, Compliance e Riscos." />
+    
+    <!-- SEO: Title & Description -->
+    <title>REDE CONSELHO+ | Governança Corporativa e Conselhos Consultivos</title>
+    <meta name="description" content="A principal rede de conexões para conselheiros e executivos. Aprofunde-se em Governança Corporativa, ESG, Compliance e Gestão Estratégica. Junte-se à REDE CONSELHO+." />
+    
+    <!-- SEO: Keywords -->
+    <meta name="keywords" content="Governança Corporativa, Conselho Consultivo, Conselheiros Independentes, Gestão Estratégica, Compliance, Riscos, ESG, Comitês de Assessoramento, IBGC, Conselhos de Administração" />
+    
+    <!-- SEO: Author & Robots -->
+    <meta name="author" content="Rede Conselho+" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.conselhomais.com.br/" /> <!-- Altere para o domínio final -->
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.conselhomais.com.br/" />
+    <meta property="og:title" content="REDE CONSELHO+ | Somamos Valor com Governança" />
+    <meta property="og:description" content="Conecte-se com especialistas e acesse as melhores práticas de governança corporativa. Uma rede exclusiva para conselheiros." />
+    <meta property="og:image" content="https://www.conselhomais.com.br/assets/social-share.jpg" /> <!-- Imagem recomendada: 1200x630px -->
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Rede Conselho+" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="REDE CONSELHO+ | Governança Corporativa" />
+    <meta name="twitter:description" content="Rede de conexões e conteúdo para governança corporativa e conselhos." />
+    <meta name="twitter:image" content="https://www.conselhomais.com.br/assets/social-share.jpg" />
+
+    <!-- Performance: Font Preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+    <!-- Tailwind Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -26,7 +60,10 @@
         }
       }
     </script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -49,17 +86,49 @@
         to { transform: translateY(0); opacity: 1; }
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
-  }
-}
-</script>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <!-- Substitua G-XXXXXXXXXX pelo seu ID de Medida -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+    _linkedin_partner_id = "YOUR_LINKEDIN_PARTNER_ID"; // Substitua pelo ID do parceiro
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+    (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_LINKEDIN_PARTNER_ID&fmt=gif" />
+    </noscript>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
+      }
+    }
+    </script>
 </head>
   <body class="bg-slate-50 text-slate-800 antialiased">
     <div id="root"></div>

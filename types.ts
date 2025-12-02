@@ -1,3 +1,4 @@
+
 export interface Member {
   id: string;
   name: string;
@@ -28,6 +29,22 @@ export interface NewsItem {
   date: string;
   summary: string;
   link?: string;
+}
+
+export interface MetaConfig {
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  ogUrl: string;
+}
+
+export interface Metric {
+  id: string;
+  label: string;
+  value: string;
 }
 
 export enum Page {

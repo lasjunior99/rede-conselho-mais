@@ -62,13 +62,15 @@ const Directory: React.FC = () => {
                 <div className="h-2 bg-brand-gold"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-start justify-between mb-4">
+                    {/* SEO Improvement: Descriptive Alt Text */}
                     <img 
                       src={member.photoUrl} 
-                      alt={member.name} 
+                      alt={`Foto de perfil de ${member.name}, ${member.role}`} 
                       className="h-20 w-20 rounded-full object-cover border-2 border-slate-100"
+                      loading="lazy"
                     />
                     {member.linkedinUrl && (
-                      <a href={member.linkedinUrl} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-700 transition">
+                      <a href={member.linkedinUrl} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-700 transition" aria-label={`Perfil LinkedIn de ${member.name}`}>
                         <Linkedin className="h-6 w-6" />
                       </a>
                     )}

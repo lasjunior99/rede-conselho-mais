@@ -1,4 +1,5 @@
-import { Member, BlogPost, NewsItem } from './types';
+
+import { Member, BlogPost, NewsItem, MetaConfig, Metric } from './types';
 
 export const INITIAL_MEMBERS: Member[] = [
   {
@@ -69,4 +70,20 @@ export const INITIAL_NEWS: NewsItem[] = [
     summary: 'O congresso anual destacou a diversidade cognitiva como pilar central.',
     link: '#'
   }
+];
+
+export const DEFAULT_META_TAGS: MetaConfig = {
+  title: 'REDE CONSELHO+ | Governança Corporativa e Conselhos Consultivos',
+  description: 'A principal rede de conexões para conselheiros e executivos. Aprofunde-se em Governança Corporativa, ESG, Compliance e Gestão Estratégica.',
+  keywords: 'Governança Corporativa, Conselho Consultivo, Conselheiros Independentes, Gestão Estratégica, Compliance, Riscos, ESG',
+  ogTitle: 'REDE CONSELHO+ | Somamos Valor com Governança',
+  ogDescription: 'Conecte-se com especialistas e acesse as melhores práticas de governança corporativa. Uma rede exclusiva para conselheiros.',
+  ogImage: 'https://www.conselhomais.com.br/assets/social-share.jpg',
+  ogUrl: 'https://www.conselhomais.com.br/'
+};
+
+export const INITIAL_METRICS: Metric[] = [
+  { id: '1', label: 'Membros Ativos', value: '150+' },
+  { id: '2', label: 'Eventos Realizados', value: '45' },
+  { id: '3', label: 'Empresas Impactadas', value: '300+' },
 ];

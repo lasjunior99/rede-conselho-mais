@@ -18,7 +18,13 @@ const Blog: React.FC = () => {
         <div className="space-y-12">
           {blogPosts.map(post => (
             <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition">
-              <img src={post.imageUrl} alt={post.title} className="w-full h-64 object-cover" />
+              {/* SEO Improvement: Descriptive Alt Text */}
+              <img 
+                src={post.imageUrl} 
+                alt={`Imagem de capa do artigo: ${post.title}`} 
+                className="w-full h-64 object-cover" 
+                loading="lazy"
+              />
               <div className="p-8">
                 <div className="flex items-center space-x-4 text-xs text-slate-400 mb-4 uppercase tracking-wider">
                   <div className="flex items-center">

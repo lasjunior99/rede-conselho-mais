@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { DataProvider } from './services/dataContext';
@@ -10,6 +11,7 @@ import Blog from './pages/Blog';
 import News from './pages/News';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import SEOManager from './components/SEOManager';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,6 +39,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 const App: React.FC = () => {
   return (
     <DataProvider>
+      <SEOManager /> {/* Activates Dynamic SEO */}
       <Router>
         <ScrollToTop />
         <Layout>
