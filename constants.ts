@@ -1,5 +1,5 @@
 
-import { Member, BlogPost, NewsItem, MetaConfig, Metric } from './types';
+import { Member, BlogPost, NewsItem, MetaConfig, Metric, Tool } from './types';
 
 export const INITIAL_MEMBERS: Member[] = [
   {
@@ -69,6 +69,17 @@ export const INITIAL_NEWS: NewsItem[] = [
     date: '2023-10-18',
     summary: 'O congresso anual destacou a diversidade cognitiva como pilar central.',
     link: '#'
+  }
+];
+
+export const INITIAL_TOOLS: Tool[] = [
+  {
+    id: 'manual-editorial',
+    title: 'MANUAL EDITORIAL',
+    description: 'Diretrizes para a comunicação institucional, alinhamento estratégico e coerência narrativa da Rede Conselho+.',
+    fileUrl: '#', 
+    date: '2023-11-01',
+    isGenerated: true // Indicates this uses the JS generator
   }
 ];
 

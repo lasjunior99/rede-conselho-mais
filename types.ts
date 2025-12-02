@@ -31,6 +31,15 @@ export interface NewsItem {
   link?: string;
 }
 
+export interface Tool {
+  id: string;
+  title: string;
+  description: string;
+  fileUrl: string; // URL to the PDF
+  date: string;
+  isGenerated?: boolean; // Flag to indicate if it uses the internal PDF generator
+}
+
 export interface MetaConfig {
   title: string;
   description: string;
