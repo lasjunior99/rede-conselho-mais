@@ -22,21 +22,11 @@ const ScrollToTop = () => {
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
   const isAdminPage = location.pathname === '/admin';
-  // If we are authenticated in admin, we might show a different layout, 
-  // but for now, let's keep the Header/Footer everywhere except maybe a "pure" admin view if desired.
-  // The requirement says "return to tabs after admin opened", implying navigation remains available.
   
   return (
     <div className="flex flex-col min-h-screen">
-      {!isAdminPage && <Header />}
-      {/* If admin page, header is hidden to allow full screen admin dashboard, 
-          BUT users can navigate back via "Sair" or links if we add them in admin sidebar */}
-      {isAdminPage && (
-        <div className="md:hidden">
-          <Header /> 
-        </div>
-      )}
-      <main className="flex-grow">
+      <Header />
+      <main className="flex-grow bg-slate-50">
         {children}
       </main>
       {!isAdminPage && <Footer />}

@@ -132,20 +132,7 @@ const Home: React.FC = () => {
       {/* CTA Section */}
       <section className="bg-brand-blue py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-serif font-bold text-white mb-6">Fortaleça sua Governança</h2>
-          <p className="text-slate-300 mb-8 font-light text-lg">
-            Receba insights exclusivos, convites para eventos e faça parte de um ecossistema de alto nível.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-             <input 
-              type="email" 
-              placeholder="Seu e-mail corporativo" 
-              className="px-4 py-3 rounded-sm w-full sm:w-80 focus:outline-none text-slate-900"
-            />
-            <button className="bg-brand-gold text-brand-blue font-bold px-8 py-3 rounded-sm hover:bg-white transition">
-              Assinar Newsletter
-            </button>
-          </div>
+          <h2 className="text-3xl font-serif font-bold text-white">Fortaleça sua Governança</h2>
         </div>
       </section>
     </div>
