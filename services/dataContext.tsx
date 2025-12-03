@@ -12,12 +12,15 @@ interface DataContextType {
   tools: Tool[];
   
   addMember: (member: Member) => void;
+  updateMember: (id: string, updatedMember: Member) => void;
   removeMember: (id: string) => void;
   
   addBlogPost: (post: BlogPost) => void;
+  updateBlogPost: (id: string, updatedPost: BlogPost) => void;
   removeBlogPost: (id: string) => void;
   
   addNewsItem: (item: NewsItem) => void;
+  updateNewsItem: (id: string, updatedItem: NewsItem) => void;
   removeNewsItem: (id: string) => void;
   
   updateMetaTags: (newTags: MetaConfig) => void;
@@ -83,25 +86,38 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => localStorage.setItem('metaTags', JSON.stringify(metaTags)), [metaTags]);
   useEffect(() => localStorage.setItem('metrics', JSON.stringify(metrics)), [metrics]);
 
+  // Member Actions
   const addMember = (member: Member) => setMembers(prev => [...prev, member]);
+  const updateMember = (id: string, updatedMember: Member) => {
+    setMembers(prev => prev.map(m => m.id === id ? updatedMember : m));
+  };
   const removeMember = (id: string) => setMembers(prev => prev.filter(m => m.id !== id));
 
+  // Blog Actions
   const addBlogPost = (post: BlogPost) => setBlogPosts(prev => [post, ...prev]);
+  const updateBlogPost = (id: string, updatedPost: BlogPost) => {
+    setBlogPosts(prev => prev.map(p => p.id === id ? updatedPost : p));
+  };
   const removeBlogPost = (id: string) => setBlogPosts(prev => prev.filter(p => p.id !== id));
 
+  // News Actions
   const addNewsItem = (item: NewsItem) => setNewsItems(prev => [item, ...prev]);
+  const updateNewsItem = (id: string, updatedItem: NewsItem) => {
+    setNewsItems(prev => prev.map(n => n.id === id ? updatedItem : n));
+  };
   const removeNewsItem = (id: string) => setNewsItems(prev => prev.filter(n => n.id !== id));
 
+  // Tools Actions
   const addTool = (tool: Tool) => setTools(prev => [tool, ...prev]);
   const removeTool = (id: string) => setTools(prev => prev.filter(t => t.id !== id));
 
+  // Metrics Actions
   const updateMetaTags = (newTags: MetaConfig) => setMetaConfig(newTags);
-
   const addMetric = (metric: Metric) => setMetrics(prev => [...prev, metric]);
   const removeMetric = (id: string) => setMetrics(prev => prev.filter(m => m.id !== id));
 
+  // Auth Actions
   const login = (password: string) => {
-    // Allows login with either general or super password to get into the panel
     if (password === adminPassword || password === SUPER_ADMIN_PASSWORD) {
       setIsAdmin(true);
       if (password === SUPER_ADMIN_PASSWORD) {
@@ -130,9 +146,9 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   return (
     <DataContext.Provider value={{
       members, blogPosts, newsItems, metaTags, metrics, tools,
-      addMember, removeMember,
-      addBlogPost, removeBlogPost,
-      addNewsItem, removeNewsItem,
+      addMember, updateMember, removeMember,
+      addBlogPost, updateBlogPost, removeBlogPost,
+      addNewsItem, updateNewsItem, removeNewsItem,
       updateMetaTags,
       addMetric, removeMetric,
       addTool, removeTool,

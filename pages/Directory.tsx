@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Linkedin, Search, Filter } from 'lucide-react';
+import { Linkedin, Search, Filter, FileText, Download } from 'lucide-react';
 import { useData } from '../services/dataContext';
 import { CATEGORIES, Member } from '../types';
 
@@ -62,9 +63,9 @@ const Directory: React.FC = () => {
                 <div className="h-2 bg-brand-gold"></div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-start justify-between mb-4">
-                    {/* SEO Improvement: Descriptive Alt Text */}
+                    {/* Updated Photo Handling */}
                     <img 
-                      src={member.photoUrl} 
+                      src={member.photoUrl || "https://via.placeholder.com/80"} 
                       alt={`Foto de perfil de ${member.name}, ${member.role}`} 
                       className="h-20 w-20 rounded-full object-cover border-2 border-slate-100"
                       loading="lazy"
@@ -86,6 +87,17 @@ const Directory: React.FC = () => {
                       "{member.bio}"
                     </p>
                   </div>
+
+                  {/* CV Download Link */}
+                  {member.cvUrl && (
+                    <div className="mb-4">
+                      <a href={member.cvUrl} download={`CV_${member.name}.pdf`} className="flex items-center text-xs font-bold text-brand-blue hover:text-brand-gold transition border border-brand-blue/20 rounded p-2 bg-brand-blue/5 hover:bg-brand-blue/10">
+                        <FileText className="h-4 w-4 mr-2" />
+                        Ver Currículo (PDF)
+                        <Download className="h-3 w-3 ml-auto opacity-50" />
+                      </a>
+                    </div>
+                  )}
 
                   <div className="pt-4 border-t border-slate-100">
                     <span className="inline-block bg-slate-100 rounded-full px-3 py-1 text-xs font-semibold text-slate-600 mr-2 mb-2">

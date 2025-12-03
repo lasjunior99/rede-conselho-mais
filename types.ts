@@ -5,7 +5,8 @@ export interface Member {
   role: string;
   bio: string; // Max 80 words
   specialization: string; // Governança, Compliance, etc.
-  photoUrl: string;
+  photoUrl: string; // Base64 Data URI or URL
+  cvUrl?: string; // Base64 Data URI for PDF
   linkedinUrl?: string;
   email?: string;
   phone?: string;
@@ -19,7 +20,7 @@ export interface BlogPost {
   date: string;
   content: string;
   excerpt: string;
-  imageUrl: string;
+  imageUrl: string; // Base64 Data URI or URL
 }
 
 export interface NewsItem {

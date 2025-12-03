@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useData } from '../services/dataContext';
 import { User, Calendar } from 'lucide-react';
@@ -20,7 +21,7 @@ const Blog: React.FC = () => {
             <article key={post.id} className="bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition">
               {/* SEO Improvement: Descriptive Alt Text */}
               <img 
-                src={post.imageUrl} 
+                src={post.imageUrl || "https://via.placeholder.com/800x400"} 
                 alt={`Imagem de capa do artigo: ${post.title}`} 
                 className="w-full h-64 object-cover" 
                 loading="lazy"
